@@ -1,3 +1,5 @@
+package models;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -9,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import exception.*;
+import database.*;
 
 public class Store {
     private HashMap<Integer, Product> productList;
@@ -96,9 +99,10 @@ public class Store {
 
         Product product;
 
-        if (category.equalsIgnoreCase("Drinks")) {
-            product = new Product(name, description, price, category, size);
-            addProduct(product);
+        if (category.equalsIgnoreCase("DRINK")) {
+            // product = new Product(name, description, price, category, size);
+            // addProduct(product);
+            ProductDAO.addNewProduct(name, description, price, category, null, 0.0, null);
 
         } else if (category.equalsIgnoreCase("Dessert")) {
             while (true) {
@@ -112,8 +116,9 @@ public class Store {
                 }
             }
 
-            product = new Product(name, description, price, category, size, quantity);
-            addProduct(product);
+            // product = new Product(name, description, price, category, size, quantity);
+            // addProduct(product);
+            // ProductDAO.addNewProduct(name, description, price, category, quantity, size);
 
         } else if (category.equalsIgnoreCase("Retail product")) {
             while (true) {
@@ -151,8 +156,11 @@ public class Store {
                 }
             }
 
-            product = new RetailProduct(name, description, price, category, size, quantity, weight, expiryDate);
-            addProduct(product);
+            // product = new RetailProduct(name, description, price, category, size, quantity, weight, expiryDate);
+            // addProduct(product);
+            
+            
+
         }
         // scanner.close();
     }
@@ -261,11 +269,11 @@ public class Store {
     
                 } else {
                     // For other categories (e.g., Drinks), create a regular Product
-                    product = new Product(name, description, price, category, size);
+                    // product = new Product(name, description, price, category, size);
                 }
     
                 // Add the product to the product list using its product ID
-                productList.put(product.getProductId(), product);
+                // productList.put(product.getProductId(), product);
             }
             reader.close();
             

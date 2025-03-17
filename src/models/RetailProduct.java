@@ -1,4 +1,4 @@
-
+package models;
 import java.time.LocalDate;
 
 public class RetailProduct extends Product {

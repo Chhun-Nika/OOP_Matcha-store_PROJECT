@@ -1,4 +1,4 @@
-
+package models;
 public class Receipt {
 
     private static int receiptCounter = 0;
