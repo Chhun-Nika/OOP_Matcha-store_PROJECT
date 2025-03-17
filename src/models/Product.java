@@ -1,3 +1,5 @@
+package models;
+
 import java.time.LocalDate;
 
 public class Product {
@@ -16,13 +18,13 @@ public class Product {
     // add new product for admin
 
         // for drinks
-    public Product (String productName, String productDescription, double productPrice, String productCategory, String productSize) {
+    public Product (String productName, String productDescription, double productPrice, String productCategory) {
         this.productId = ++idCounter;
         this.productName = productName;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
         this.productCategory = productCategory;
-        this.productSize = productSize;
+        // this.productSize = productSize;
     }
 
         // for deserts  
