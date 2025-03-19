@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserPageController">
+   <children>
+      <Label fx:id="loginUserLabel" layoutX="471.0" layoutY="143.0" text="Log in as User" textFill="#31572c">
+         <font>
+            <Font name="Baloo Thambi 2 ExtraBold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="userEmailLabel" layoutX="419.0" layoutY="254.0" text="Enter your email:" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userEmailTextInput" layoutX="418.0" layoutY="294.0" prefHeight="42.0" prefWidth="368.0" promptText="email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="userPasswordLabel" layoutX="417.0" layoutY="349.0" text="Enter your password:" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="userLoginBtn" layoutX="541.0" layoutY="461.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="110.0" styleClass="userBtn" stylesheets="@../style/styles.css" text="Log in">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="userRegisterBtn" layoutX="512.0" layoutY="606.0" mnemonicParsing="false" onAction="#registerBtnListener" prefHeight="45.0" prefWidth="180.0" styleClass="adminBtn" stylesheets="@../style/styles.css" text="Create an account">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="backUserBtn" layoutX="70.0" layoutY="60.0" mnemonicParsing="false" onAction="#backBtnListener" prefHeight="45.0" prefWidth="100.0" styleClass="backBtn" stylesheets="@../style/styles.css" text="&lt;  Back">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="userPwdInputText" layoutX="419.0" layoutY="395.0" prefHeight="42.0" prefWidth="368.0" promptText="password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      <Label fx:id="registerLabel" layoutX="512.0" layoutY="565.0" text="Didin't have any account?">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

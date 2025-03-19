@@ -5,6 +5,7 @@ USE Matcha_store;
 
 CREATE TABLE IF NOT EXISTS Customer (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
     dob DATE NOT NULL,
     password VARCHAR(255),
     phone_number VARCHAR(20) NOT NULL
@@ -16,10 +17,13 @@ CREATE TABLE IF NOT EXISTS Product (
     description TEXT,
     price DECIMAL(10,2),
     category ENUM('DRINK', 'DESSERT', 'RETAIL') NOT NULL,
-    product_size VARCHAR(50) DEFAULT NULL,
-    weight DECIMAL(10,2) DEFAULT NULL,
-    expiry_date DATE DEFAULT NULL
+    product_size VARCHAR(50) NULL,
+    weight DECIMAL(10,2) NULL,
+    expiry_date DATE NULL,
+    quantity INT NULL
 );
+
+SELECT id, name, description, price, category, product_size, weight, expiry_date, quantity FROM Product;
 
 CREATE TABLE IF NOT EXISTS Cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -43,3 +47,6 @@ CREATE TABLE IF NOT EXISTS Receipt (
 
 
 SELECT * FROM Product;
+
+
+

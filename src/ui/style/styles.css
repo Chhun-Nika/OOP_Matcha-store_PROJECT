@@ -1,0 +1,28 @@
+.adminBtn {
+    -fx-background-color: #4F772D;
+    -fx-text-fill: #ffffff;
+}
+
+.adminBtn:hover {
+    -fx-background-color: #3B5C29;
+    -fx-cursor: hand;
+}
+
+.userBtn {
+    -fx-background-color: #90A955;
+    -fx-text-fill: #ffffff;
+}
+.userBtn:hover {
+    -fx-background-color: #789B44;
+    -fx-cursor: hand;
+}
+
+.backBtn {
+    -fx-background-color: #31572C;
+    -fx-text-fill: #ffffff;
+}
+
+.backBtn:hover{
+    -fx-background-color: #213c1d;
+    -fx-cursor: hand;
+}
