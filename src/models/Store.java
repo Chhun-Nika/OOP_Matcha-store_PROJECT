@@ -11,22 +11,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import exception.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import database.*;
 
 public class Store {
     private HashMap<Integer, Product> productList;
-    private int lastProductID;
 
     // Constructor to initialize the hashmap
     public Store() {
         productList = new HashMap<>();
     }
 
-    public void addProduct(Product product) {
-        int lastProductID = product.getProductId();
-        productList.put(lastProductID, product);
-        Product.setIdCounter(lastProductID);
+    public void addProduct(int id, Product product) {
+        productList.put(id, product);
         
+    }
+
+    // getter: convert a product to observelist so that it is easy to update the table in GUI
+    // Convert HashMap values to ObservableList
+    public ObservableList<Product> getProductList() {
+        displayListProducts();
+        return FXCollections.observableArrayList(productList.values());
     }
 
 
@@ -88,25 +94,23 @@ public class Store {
             }
         }
 
-        System.out.print("Size: ");
-        size = scanner.nextLine();
+        if (category.equals("DRINK")) {
+            ProductDAO.addNewProduct(name, description, price, category, null, 0.0, null, 0);
 
-        // while (true) {
-        //     try {
-
-        //     }
-        // }
-
-        Product product;
-
-        if (category.equalsIgnoreCase("DRINK")) {
-            // product = new Product(name, description, price, category, size);
-            // addProduct(product);
-            ProductDAO.addNewProduct(name, description, price, category, null, 0.0, null);
-
-        } else if (category.equalsIgnoreCase("Dessert")) {
+        } else if (category.equals("DESSERT")) {
             while (true) {
                 try {
+                    System.out.print("Size: ");
+                    size = scanner.nextLine();
+                    StringOnlyException.validate(size);
+                    break;
+                } catch (StringOnlyException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            while (true) {
+                try {
+
                     System.out.print("Quantity: ");
                     quantity = Integer.parseInt(scanner.nextLine());
                     if (quantity <= 0) throw new IllegalArgumentException("Quantity must be greater than 0.");
@@ -116,11 +120,20 @@ public class Store {
                 }
             }
 
-            // product = new Product(name, description, price, category, size, quantity);
-            // addProduct(product);
-            // ProductDAO.addNewProduct(name, description, price, category, quantity, size);
+            ProductDAO.addNewProduct(name, description, price, category, size, 0.0, null, quantity);
 
-        } else if (category.equalsIgnoreCase("Retail product")) {
+        } else if (category.equals("RETAIL")) {
+
+            while (true) {
+                try {
+                    System.out.print("Size: ");
+                    size = scanner.nextLine();
+                    StringOnlyException.validate(size);
+                    break;
+                } catch (StringOnlyException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
             while (true) {
                 try {
                     System.out.print("Quantity: ");
@@ -156,26 +169,18 @@ public class Store {
                 }
             }
 
-            // product = new RetailProduct(name, description, price, category, size, quantity, weight, expiryDate);
-            // addProduct(product);
-            
-            
+            ProductDAO.addNewProduct(name, description, price, category, size, weight, expiryDate, quantity);
 
         }
         // scanner.close();
     }
 
-    public Product getProduct(int productId) {
-        return productList.get(productId);
-    }
 
-    public void listProducts() {
-        
+    public void displayListProducts() {
+        ProductDAO.loadProductFromDB(this);
         for (Product product : productList.values()) {
             System.out.println(product);
-            // System.out.println(product.getProductId());
-        }
-        
+        }  
     }
 
 
@@ -283,27 +288,27 @@ public class Store {
     }
 
     // get the last ID from file
-    private int loadLastProductID() {
-        String pathName = "/Users/nikachhun/Documents/Year 2/Term 2/Java OOP/Java_Project/OOP_FINAL-PROJECT_Y2-T2/src/database";
-        String fileName = "test.txt";
+    // private int loadLastProductID() {
+    //     String pathName = "/Users/nikachhun/Documents/Year 2/Term 2/Java OOP/Java_Project/OOP_FINAL-PROJECT_Y2-T2/src/database";
+    //     String fileName = "test.txt";
         
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathName + "/" + fileName));
-            String line;
-            String lastLine = null;
-            while ((line = reader.readLine()) != null) {
-                lastLine = line;
-            }
+    //     try {
+    //         BufferedReader reader = new BufferedReader(new FileReader(pathName + "/" + fileName));
+    //         String line;
+    //         String lastLine = null;
+    //         while ((line = reader.readLine()) != null) {
+    //             lastLine = line;
+    //         }
 
-            String[] parts = lastLine.split(", ");
-            lastProductID = Integer.parseInt(parts[0].split(":")[1].trim());
-            reader.close();
+    //         String[] parts = lastLine.split(", ");
+    //         lastProductID = Integer.parseInt(parts[0].split(":")[1].trim());
+    //         reader.close();
 
-        } catch (IOException e) {
-            System.out.println("An error occurred while writing to the file: " + e.getMessage());
-        }
-        return lastProductID;
-    }
+    //     } catch (IOException e) {
+    //         System.out.println("An error occurred while writing to the file: " + e.getMessage());
+    //     }
+    //     return lastProductID;
+    // }
 
 
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterPageController">
+   <children>
+      <Label fx:id="SignUpLabel" layoutX="523.0" layoutY="75.0" text="Sign up" textFill="#31572c">
+         <font>
+            <Font name="Baloo Thambi 2 ExtraBold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="416.0" layoutY="151.0" text="Enter your name :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="415.0" layoutY="185.0" prefHeight="42.0" prefWidth="368.0" promptText="fullname">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="emailLabel" layoutX="416.0" layoutY="238.0" text="Enter your email :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailTextField" layoutX="415.0" layoutY="272.0" prefHeight="42.0" prefWidth="368.0" promptText="email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="phoneNumLabel" layoutX="417.0" layoutY="326.0" text="Enter your phone number :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="phoneNumTextField" layoutX="416.0" layoutY="360.0" prefHeight="42.0" prefWidth="368.0" promptText="phone number">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="dobInput" layoutX="419.0" layoutY="447.0" prefHeight="42.0" prefWidth="368.0" promptText="Select your birthday" />
+      <Label fx:id="dobLabel" layoutX="417.0" layoutY="411.0" text="Date of birth :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="pwdLabel" layoutX="419.0" layoutY="499.0" text="Enter password :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pwdTextField" layoutX="418.0" layoutY="534.0" prefHeight="42.0" prefWidth="368.0" promptText="password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      <Label fx:id="confirmPwdLabel" layoutX="420.0" layoutY="585.0" text="Confirm password :" textFill="#495057">
+         <font>
+            <Font name="Baloo Thambi 2 Regular" size="20.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="confirmPwdTextField" layoutX="419.0" layoutY="620.0" prefHeight="42.0" prefWidth="368.0" promptText="confirm password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="createAccBtn" layoutX="512.0" layoutY="694.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="180.0" styleClass="adminBtn" stylesheets="@../style/styles.css" text="Create an account">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="backUserBtn" layoutX="70.0" layoutY="60.0" mnemonicParsing="false" onAction="#backBtnListener" prefHeight="45.0" prefWidth="100.0" styleClass="backBtn" stylesheets="@../style/styles.css" text="&lt;  Back">
+         <font>
+            <Font name="Baloo Thambi 2 SemiBold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/nikachhun/Documents/Year 2/Term 2/Java OOP/JDBC/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx-swt.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.base.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.controls.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.fxml.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.graphics.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.media.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.swing.jar",
+        "/Users/nikachhun/javaLib/javafx-sdk-23.0.2/lib/javafx.web.jar"
+    ]
+}

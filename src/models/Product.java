@@ -3,7 +3,7 @@ package models;
 import java.time.LocalDate;
 
 public class Product {
-    private static int idCounter = 0;
+    // private static int idCounter = 0;
     private int productId;
     private String productName;
     private String productDescription;
@@ -19,7 +19,7 @@ public class Product {
 
         // for drinks
     public Product (String productName, String productDescription, double productPrice, String productCategory) {
-        this.productId = ++idCounter;
+        // this.productId = ++idCounter;
         this.productName = productName;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
@@ -29,7 +29,19 @@ public class Product {
 
         // for deserts  
     public Product (String productName, String productDescription, double productPrice, String productCategory,  String productSize, int productQuantity) {
-        this.productId = ++idCounter;
+        // this.productId = ++idCounter;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+        this.productCategory = productCategory;
+        this.productSize = productSize;
+        this.productQuantity = productQuantity;
+
+    }
+
+        // used to display product in gui
+    public Product (int productId, String productName, String productDescription, double productPrice, String productCategory,  String productSize, int productQuantity) {
+        this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productDescription = productDescription;
@@ -40,42 +52,41 @@ public class Product {
     }
 
 
-
     // getter method for both seller and customers
 
 
-    protected int getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    protected String getProductName() {
+    public String getProductName() {
         return productName;
         
     };
 
-    protected String getProductDescription () {
+    public String getProductDescription () {
         return productDescription;
     };
 
-    protected double getProductPrice () {
+    public double getProductPrice () {
         return productPrice;
     };
 
-    protected String getProductCategory () {
+    public String getProductCategory () {
         return productCategory;
     };
 
-    protected int getProductQuantity () {
+    public int getProductQuantity () {
         return productQuantity;
     };
 
-    protected String getProductSize () {
+    public String getProductSize () {
         return productSize;
     }
 
-    public static int getIdCounter() {
-        return idCounter;
-    }
+    // public static int getIdCounter() {
+    //     return idCounter;
+    // }
 
 
 
@@ -123,9 +134,9 @@ public class Product {
         this.productSize = productSize;
     }
     
-    protected static void setIdCounter (int id) {
-        idCounter = id;
-    }
+    // protected static void setIdCounter (int id) {
+    //     idCounter = id;
+    // }
 
     @Override
     // the format that is printed need to be change in order to display it in the console

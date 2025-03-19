@@ -14,6 +14,14 @@ public class RetailProduct extends Product {
         this.expiryDate = dateInput;
     }
 
+    // for db
+    public RetailProduct(int productId, String productName,  String productDescription, double productPrice, String productCategory, String productSize, int productQuantity,
+                            double weight, LocalDate dateInput) {
+        super(productId, productName, productDescription, productPrice, productCategory, productSize, productQuantity);
+        this.weight = weight;
+        this.expiryDate = dateInput;
+    }
+
  
     // getter method for seller and customer
     // the override one are the functions from the superclass
@@ -21,11 +29,11 @@ public class RetailProduct extends Product {
     
 
 
-    protected double getWeight () {
+    public double getWeight () {
         return weight;
     }
 
-    protected LocalDate getExpiryDate () {
+    public LocalDate getExpiryDate () {
         return expiryDate;
     }
 
