@@ -15,14 +15,13 @@ public class DatabaseConnection {
     private static Connection connection = null;
     private static final String URL = "jdbc:mysql://localhost:3306/Matcha_store";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "nika@Ax99";
+    private static final String PASSWORD = "Cambodai123!@#";
 
     // Establish the connection
     public static Connection getConnection() {
         if (connection == null) {
             try {
                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-                System.out.println("Connected to MySQL successfully!");
             }catch (CJCommunicationsException e) {
                 System.out.println("please check ur db server");
                
@@ -44,7 +43,7 @@ public class DatabaseConnection {
     }
 
     // Execute a query (SELECT)
-    public static ResultSet executeQuery(String query) {
+    public ResultSet executeQuery(String query) {
         try {
             Statement statement = getConnection().createStatement();
             return statement.executeQuery(query);
@@ -73,7 +72,6 @@ public class DatabaseConnection {
             try {
                 connection.close();
                 connection = null;
-                System.out.println("Connection closed.");
             } catch (SQLException e) {
                 System.out.println("Failed to close the connection!");
                 e.printStackTrace();

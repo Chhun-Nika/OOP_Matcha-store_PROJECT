@@ -5,9 +5,11 @@ USE Matcha_store;
 
 CREATE TABLE IF NOT EXISTS Customer (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    dob DATE NOT NULL,
+    name VARCHAR (255),
+    phone_number VARCHAR(20) NOT NULL,
+    email VARCHAR (255),
     password VARCHAR(255),
-    phone_number VARCHAR(20) NOT NULL
+    dob DATE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Product (
@@ -41,5 +43,14 @@ CREATE TABLE IF NOT EXISTS Receipt (
     FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
 
+SELECT * FROM Customer;
 
-SELECT * FROM Product;
+CREATE TABLE Seller (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO Seller (name, email, password)
+VALUES ('Admin Seller', 'seller@gmail.com', 'seller123');

@@ -23,11 +23,10 @@ public class Customer implements Interface {
 
     // constructor for register
 
-    public Customer( String customerName, String customerAddress, String customerPhone, String customerEmail, String password, LocalDate dateOfBirth) {
+    public Customer( String customerName,  String customerPhone, String customerEmail, String password, LocalDate dateOfBirth) {
 
         this.customerID = ++ customerIDCounter;
         this.customerName = customerName;
-        this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
         this.password = password;
@@ -37,6 +36,9 @@ public class Customer implements Interface {
     public Customer () {
 
     }
+    public static void setCustomerIDCounter(int newCounter) {
+        customerIDCounter = newCounter;
+    }
 
     // Getter 
     public int getCustomerId() {
@@ -44,10 +46,6 @@ public class Customer implements Interface {
     }
     public String getCustomerName () {
         return customerName;
-    }
-
-    public String getCustomerAddress () {
-        return customerAddress;
     }
 
     public String getCustomerPhone () {
@@ -61,6 +59,9 @@ public class Customer implements Interface {
 
     public LocalDate getDateofBirth () {
         return dateOfBirth;
+    }
+    public String getPassword () {
+        return password;
     }
 
     // for password we dont use getter, we use method to check the user input password instead. 
@@ -81,10 +82,6 @@ public class Customer implements Interface {
     public void setCustomerName (String customerName) {
         this.customerName = customerName;
     } 
-
-    public void setCustomerAddress (String customerAddress) {
-        this.customerAddress = customerAddress;
-    }
 
     public void setCustomerPhone (String customerPhone) {
         this.customerPhone = customerPhone;
