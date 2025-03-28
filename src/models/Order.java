@@ -50,6 +50,8 @@ public class Order implements Serializable{
             System.out.println("Order have been failed: "+ e.getMessage());
         }
     }
+
+    public Order();
     
     public void addToCart(String productId, int quantity) {
         if(productId == null || productId.isEmpty() || quantity <= 0) {
@@ -206,7 +208,7 @@ public class Order implements Serializable{
     }
 
     public static void main(String[] args) throws SQLException {
-        Order newOrder = new Order(1, 2, "MATCHA_LATTE", 11.0, 5.50, "No sugar");
+        Order newOrder = new Order();
         HashMap<Integer, RetailProduct> product = new HashMap<>();
         newOrder.addToCart();
         // product = newOrder.getProducts();
